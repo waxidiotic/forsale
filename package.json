@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-datocms-demo",
-  "description": "Gatsby DatoCMS creative portfolio demo",
+  "name": "forsale",
+  "description": "Alex Bussey sells some stuff.",
   "version": "1.0.0",
-  "author": "Stefano Verna <s.verna@datocms.com>",
+  "author": "Alex Bussey <awbussey83@gmail.com>",
   "dependencies": {
     "dotenv": "^8.1.0",
     "gatsby": "^2.20.0",
