@@ -20,6 +20,9 @@ const IndexPage = ({ data }) => (
               <div className="card__description">
                 <p>{forsale.excerpt}</p>
               </div>
+              <div className="card__price">                
+                <Link to={`/forsale/${forsale.slug}`}>${forsale.price}</Link>
+              </div>
             </figcaption>
           </figure>
         </div>
@@ -39,6 +42,7 @@ export const query = graphql`
           title
           slug
           excerpt
+          price
           coverImage {
             fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsSizes

@@ -65,9 +65,6 @@ const TemplateWrapper = ({ children }) => {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
               </ul>
               <p className="sidebar__social">
                 {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
@@ -82,7 +79,8 @@ const TemplateWrapper = ({ children }) => {
                 ))}
               </p>
               <div className="sidebar__copyright">
-                {data.datoCmsHome.copyright}
+                <p>Made with <a href="https://www.gatsbyjs.org/">Gatsby</a> and <a href="https://www.datocms.com/">DatoCMS</a></p>
+                <p>Hosted by <a href="https://www.netlify.com/">Netlify</a></p>
               </div>
             </div>
           </div>

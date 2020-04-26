@@ -20,7 +20,7 @@ First, install the dependencies of this project:
 yarn install
 ```
 
-Add an `.env` file containing the read-only API token of your DatoCMS site:
+Add an `.env` file containing the read-only API token of your DatoCMS site: 
 
 ```
 echo 'DATO_API_TOKEN=abc123' >> .env
