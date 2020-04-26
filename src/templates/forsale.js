@@ -1,7 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
-import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 
@@ -12,8 +11,9 @@ export default ({ data }) => (
       <div className="sheet__inner">
         <h1 className="sheet__title">{data.datoCmsForsale.title}</h1>
         <p className="sheet__lead">{data.datoCmsForsale.excerpt}</p>
+        <p className="sheet__price">${data.datoCmsForsale.price}</p>
         <div className="sheet__slider">
-          <Slider infinite={true} slidesToShow={2} arrows>
+          <Slider infinite={true} slidesToShow={1} slidesToScroll={1} arrows dots>
             {data.datoCmsForsale.gallery.map(({ fluid }) => (
               <img alt={data.datoCmsForsale.title} key={fluid.src} src={fluid.src} />
             ))}
@@ -25,9 +25,6 @@ export default ({ data }) => (
             __html: data.datoCmsForsale.descriptionNode.childMarkdownRemark.html,
           }}
         />
-        <div className="sheet__gallery">
-          <Img fluid={data.datoCmsForsale.coverImage.fluid} />
-        </div>
       </div>
     </article>
   </Layout>
@@ -41,6 +38,7 @@ export const query = graphql`
       }
       title
       excerpt
+      price
       gallery {
         fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
           src
